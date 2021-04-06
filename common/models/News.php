@@ -25,6 +25,16 @@ class News extends \yii\db\ActiveRecord
     }
 
     /**
+     * @return array
+     */
+    public function fields(): array
+    {
+        $fields = parent::fields();
+        unset($fields['external_id']);
+        return $fields;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function attributeLabels(): array
